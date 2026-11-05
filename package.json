@@ -1,0 +1,8 @@
+{
+  "name": "guia-cftv-pratico",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}

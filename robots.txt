@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /acesso
+Disallow: /materiais/
+
+Sitemap: https://SEU-PROJETO.vercel.app/sitemap.xml

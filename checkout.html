@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu Guia Visual de CFTV | Guia CFTV Prático</title>
+<meta name="description" content="Monte seu Guia Visual do Instalador CFTV em 3 perguntas e receba o material digital após a confirmação do PIX.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0b3b5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='7' fill='%23ea580c'/%3E%3Cpath d='M6 10.5h9.5l4.5-2.5v9l-4.5-2.5H6z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/assets/config.js"></script>
+<style>
+:root{
+  --ink:#0f172a;--muted:#5b6b80;--line:#e3e8ef;--bg:#f3f5f8;--card:#fff;
+  --brand:#0b3b5c;--brand-2:#12557f;--accent:#ea580c;--accent-d:#c2410c;--soft:#fff4ec;
+  --ok:#15803d;--ok-soft:#ecfdf3;--danger:#b42318;--radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;min-height:100vh}
+a{color:var(--brand-2)}
+.top{background:var(--brand);color:#fff}
+.top-in{max-width:560px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:#fff;text-decoration:none;letter-spacing:-.01em}
+.logo svg{flex:none}
+.secure{display:flex;align-items:center;gap:6px;font-size:12px;opacity:.9}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 120px}
+.progress{display:flex;gap:6px;margin:4px 0 14px}
+.progress span{flex:1;height:5px;border-radius:99px;background:#d7dee8;transition:background .25s}
+.progress span.on{background:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.panel{display:none}
+.panel.active{display:block;animation:fade .2s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.step-label{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
+.sub{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px;font:inherit;color:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:#b9c4d3}
+.opt.sel{border-color:var(--accent);background:var(--soft)}
+.opt .ic{flex:none;width:40px;height:40px;border-radius:10px;background:#eef3f8;display:grid;place-items:center;color:var(--brand)}
+.opt.sel .ic{background:#ffe3d1;color:var(--accent-d)}
+.opt b{display:block;font-size:15.5px;font-weight:650}
+.opt small{display:block;color:var(--muted);font-size:13px;margin-top:1px}
+.back{display:inline-flex;align-items:center;gap:4px;margin-top:14px;background:none;border:0;color:var(--muted);font:inherit;font-size:13.5px;cursor:pointer;padding:4px 0}
+.reco{border:1.5px solid var(--brand);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.reco-head{background:var(--brand);color:#fff;padding:10px 14px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.reco-body{padding:14px}
+.reco-title{font-size:17px;font-weight:800;line-height:1.3}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.tag{font-size:12px;font-weight:600;background:#eef3f8;color:var(--brand);border-radius:99px;padding:3px 9px}
+.reco ul{list-style:none;display:grid;gap:7px;margin:10px 0}
+.reco li{display:flex;gap:8px;font-size:14px}
+.reco li:before{content:"";flex:none;width:16px;height:16px;margin-top:2px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
+.price-row span{font-size:13px;color:var(--muted)}
+.price-row strong{font-size:22px;font-weight:800;white-space:nowrap;margin-left:10px}
+.bumps-title{font-size:14px;font-weight:700;margin:4px 0 8px}
+.bump{display:flex;gap:12px;align-items:flex-start;border:1.5px dashed #f3b38c;background:#fffaf6;border-radius:12px;padding:12px;margin-bottom:10px;cursor:pointer}
+.bump.on{border-style:solid;border-color:var(--accent);background:var(--soft)}
+.bump input{position:absolute;opacity:0;pointer-events:none}
+.box{flex:none;width:22px;height:22px;border-radius:6px;border:2px solid #d38456;background:#fff;margin-top:1px;display:grid;place-items:center}
+.bump.on .box{background:var(--accent);border-color:var(--accent)}
+.bump.on .box:after{content:"";width:11px;height:6px;border:2.5px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.bump-t{display:block;font-size:14.5px;font-weight:700;line-height:1.3}
+.bump-t em{font-style:normal;color:var(--accent-d);white-space:nowrap}
+.bump-d{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.total{display:flex;justify-content:space-between;align-items:center;background:#f6f8fb;border-radius:10px;padding:12px 14px;margin:6px 0 4px;font-weight:700}
+.total strong{font-size:20px;white-space:nowrap}
+.legal-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+.field input{width:100%;font:inherit;font-size:16px;padding:13px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s}
+.field input:focus{border-color:var(--brand-2)}
+.field.err input{border-color:var(--danger)}
+.field .hint{font-size:12px;color:var(--muted);margin-top:4px}
+.field.err .hint{color:var(--danger)}
+.summary{display:flex;justify-content:space-between;align-items:center;font-size:14px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:14px}
+.summary strong{font-size:16px}
+.actions{margin-top:16px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;padding:16px;font:inherit;font-size:16.5px;font-weight:750;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 16px -6px rgba(234,88,12,.55);transition:background .15s,transform .05s}
+.btn:hover{background:var(--accent-d)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.65;cursor:wait}
+.btn-ghost{background:#fff;color:var(--brand);border:1.5px solid var(--line);box-shadow:none;font-size:15px;padding:13px}
+.btn-ghost:hover{background:#f6f8fb}
+.error-box{display:none;background:#fef3f2;border:1px solid #fecdca;color:var(--danger);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:12px}
+.error-box.show{display:block}
+.pix-amount{text-align:center;margin-bottom:12px}
+.pix-amount span{display:block;font-size:13px;color:var(--muted)}
+.pix-amount strong{font-size:28px;font-weight:800}
+.qr{display:grid;place-items:center;margin:6px auto 14px;width:220px;height:220px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px}
+.qr img,.qr canvas{width:200px;height:200px}
+.copy-row{display:flex;gap:8px}
+.copy-row input{flex:1;min-width:0;font:inherit;font-size:13px;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:#f8fafc;color:var(--muted)}
+.copy-btn{flex:none;border:0;border-radius:10px;padding:0 16px;font:inherit;font-weight:700;background:var(--brand);color:#fff;cursor:pointer}
+.status{display:flex;align-items:center;justify-content:center;gap:10px;margin:16px 0 4px;font-size:14.5px;font-weight:600;color:var(--brand)}
+.spin{width:18px;height:18px;border:2.5px solid #c9d6e3;border-top-color:var(--brand);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.timer{text-align:center;font-size:13px;color:var(--muted)}
+.howto{list-style:none;counter-reset:s;display:grid;gap:8px;margin:16px 0 4px;font-size:14px}
+.howto li{counter-increment:s;display:flex;gap:10px}
+.howto li:before{content:counter(s);flex:none;width:22px;height:22px;border-radius:50%;background:#eef3f8;color:var(--brand);font-weight:800;font-size:12px;display:grid;place-items:center}
+.keep{background:var(--ok-soft);border:1px solid #abefc6;color:#05603a;border-radius:10px;padding:10px 12px;font-size:13.5px;margin-top:14px}
+.ok-wrap{text-align:center;padding:10px 0}
+.ok-icon{width:64px;height:64px;border-radius:50%;background:var(--ok);display:grid;place-items:center;margin:0 auto 12px}
+.foot{text-align:center;font-size:12px;color:var(--muted);padding:18px 16px 8px;line-height:1.7}
+.foot a{color:var(--muted)}
+@media (max-width:640px){
+  .sticky{position:sticky;bottom:0;background:linear-gradient(to top,var(--card) 78%,rgba(255,255,255,0));padding:14px 0 calc(6px + env(safe-area-inset-bottom));margin:10px -2px -4px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="/" aria-label="Início">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#ea580c"/><path d="M6 10.5h9.5l4.5-2.5v9l-4.5-2.5H6z" fill="#fff"/><circle cx="9" cy="12.8" r="1.4" fill="#ea580c"/></svg>
+      <span data-site="brand">Guia CFTV Prático</span>
+    </a>
+    <span class="secure">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      Pagamento seguro via PIX
+    </span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="progress" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <div class="card">
+
+    <!-- 1. Perfil -->
+    <section class="panel active" id="p-q1" data-step="1">
+      <div class="step-label">Pergunta 1 de 3</div>
+      <h1>Você já trabalha com câmeras de segurança?</h1>
+      <p class="sub">Vamos montar o material certo para o seu momento.</p>
+      <div class="opts" data-q="perfil">
+        <button class="opt" data-v="instalador"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span><span><b>Sim, já instalo</b><small>Faço serviço para clientes</small></span></button>
+        <button class="opt" data-v="iniciante"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M7 10.5V15c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.5"/></svg></span><span><b>Estou começando</b><small>Quero trabalhar ou ter renda extra na área</small></span></button>
+        <button class="opt" data-v="casa"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><span><b>Vou instalar no meu imóvel</b><small>Casa, comércio ou condomínio</small></span></button>
+      </div>
+    </section>
+
+    <!-- 2. Sistema -->
+    <section class="panel" id="p-q2" data-step="2">
+      <div class="step-label">Pergunta 2 de 3</div>
+      <h2>Que tipo de sistema você usa ou vai usar?</h2>
+      <p class="sub">Se não souber, sem problema: o guia explica a diferença.</p>
+      <div class="opts" data-q="sistema">
+        <button class="opt" data-v="analogico"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="10" rx="2"/><circle cx="7.5" cy="12" r="1.5"/><path d="M12 12h6"/></svg></span><span><b>Analógico (DVR)</b><small>Cabo coaxial ou cabo de rede com balun</small></span></button>
+        <button class="opt" data-v="ip"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="7" rx="1.5"/><path d="M7 11v4M12 11v6M17 11v4"/><path d="M5 20h14"/></svg></span><span><b>IP (NVR)</b><small>Cabo de rede, switch PoE</small></span></button>
+        <button class="opt" data-v="nao-sei"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.5V14"/><path d="M12 17h.01"/></svg></span><span><b>Não sei / os dois</b><small>Quero entender analógico e IP</small></span></button>
+      </div>
+      <button class="back" data-back>‹ Voltar</button>
+    </section>
+
+    <!-- 3. Objetivo -->
+    <section class="panel" id="p-q3" data-step="3">
+      <div class="step-label">Pergunta 3 de 3</div>
+      <h2>O que você precisa resolver agora?</h2>
+      <p class="sub">Isso define o que aparece primeiro no seu material.</p>
+      <div class="opts" data-q="objetivo">
+        <button class="opt" data-v="orcamento"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><span><b>Fazer orçamento e cobrar certo</b><small>Material, mão de obra e entrega</small></span></button>
+        <button class="opt" data-v="instalacao"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h10l4-2v10l-4-2H4z"/><path d="M8 13v6"/></svg></span><span><b>Instalar do zero sem errar</b><small>Cabos, fonte, DVR/NVR, HD e celular</small></span></button>
+        <button class="opt" data-v="diagnostico"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><span><b>Resolver um problema</b><small>Sem imagem, ruído, acesso pelo celular</small></span></button>
+        <button class="opt" data-v="carreira"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span><span><b>Aprender para começar na área</b><small>Do básico ao primeiro serviço</small></span></button>
+      </div>
+      <button class="back" data-back>‹ Voltar</button>
+    </section>
+
+    <!-- 4. Oferta -->
+    <section class="panel" id="p-offer" data-step="4">
+      <div class="step-label">Seu material</div>
+      <h2 id="offer-h">Pronto. Montamos seu guia.</h2>
+      <div class="reco">
+        <div class="reco-head">Recomendado para você</div>
+        <div class="reco-body">
+          <div class="reco-title" id="reco-title">Guia Visual do Instalador CFTV</div>
+          <div class="tags" id="reco-tags"></div>
+          <ul id="reco-list"></ul>
+          <div class="price-row"><span>Material digital (PDF) · acesso após o PIX</span><strong id="main-price">—</strong></div>
+        </div>
+      </div>
+      <div id="bumps-wrap" hidden>
+        <div class="bumps-title">Quer adicionar ao pedido?</div>
+        <div id="bumps"></div>
+      </div>
+      <div class="total"><span>Total</span><strong id="total-offer">—</strong></div>
+      <div class="error-box" id="catalog-err">Não foi possível carregar os preços. <a href="#" onclick="location.reload();return false">Tentar novamente</a></div>
+      <div class="actions sticky">
+        <button class="btn" id="btn-offer" disabled>Continuar <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="legal-note">Produto digital. Direito de arrependimento de 7 dias, conforme o CDC.</p>
+      <button class="back" data-back>‹ Voltar</button>
+    </section>
+
+    <!-- 5. Dados -->
+    <section class="panel" id="p-data" data-step="5">
+      <div class="step-label">Dados para o PIX</div>
+      <h2>Para onde enviamos seu acesso?</h2>
+      <p class="sub">Leva 30 segundos. Seus dados são usados só para gerar o pagamento e liberar o material.</p>
+      <div class="summary"><span id="sum-label">Guia Visual do Instalador CFTV</span><strong id="sum-total">—</strong></div>
+      <form id="form" novalidate autocomplete="on">
+        <div class="field" id="f-name"><label for="name">Nome completo</label><input id="name" name="name" autocomplete="name" placeholder="Seu nome e sobrenome"><div class="hint">Digite nome e sobrenome</div></div>
+        <div class="field" id="f-email"><label for="email">E-mail</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com"><div class="hint">Confira se o e-mail está correto</div></div>
+        <div class="field" id="f-phone"><label for="phone">WhatsApp</label><input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(11) 99999-9999"><div class="hint">Com DDD</div></div>
+        <div class="field" id="f-cpf"><label for="cpf">CPF</label><input id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00"><div class="hint">Necessário para gerar o PIX</div></div>
+        <div class="error-box" id="form-err"></div>
+        <div class="actions sticky">
+          <button class="btn" id="btn-pay" type="submit">Gerar PIX · <span id="btn-total">—</span></button>
+        </div>
+      </form>
+      <p class="legal-note">Ao continuar, você concorda com os <a href="/termos-de-uso" target="_blank">Termos de Uso</a> e a <a href="/politica-privacidade" target="_blank">Política de Privacidade</a>.</p>
+      <button class="back" data-back>‹ Voltar</button>
+    </section>
+
+    <!-- 6. PIX -->
+    <section class="panel" id="p-pix" data-step="5">
+      <div class="pix-amount"><span>Total a pagar</span><strong id="pix-total">—</strong></div>
+      <div class="qr" id="qr"></div>
+      <div class="copy-row">
+        <input id="pix-code" readonly aria-label="PIX copia e cola">
+        <button class="copy-btn" id="btn-copy">Copiar</button>
+      </div>
+      <div class="status" id="pix-status"><span class="spin"></span>Aguardando pagamento…</div>
+      <div class="timer">O código expira em <b id="pix-timer">30:00</b></div>
+      <ol class="howto">
+        <li>Copie o código ou escaneie o QR Code</li>
+        <li>No app do seu banco, escolha PIX › Copia e Cola</li>
+        <li>Confirme o pagamento e volte para esta página</li>
+      </ol>
+      <div class="keep">Assim que o pagamento for confirmado, você é levado automaticamente ao seu material. O link de acesso também fica salvo neste navegador.</div>
+      <div class="actions"><button class="btn btn-ghost" id="btn-paid">Já paguei</button></div>
+    </section>
+
+    <!-- 7. Confirmado -->
+    <section class="panel" id="p-ok" data-step="5">
+      <div class="ok-wrap">
+        <div class="ok-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h2>Pagamento confirmado!</h2>
+        <p class="sub">Abrindo seu material…</p>
+        <a class="btn" id="btn-access" href="/acesso">Acessar meu material</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot">
+    <span data-site="companyName">—</span> · CNPJ <span data-site="cnpj">—</span><br>
+    <a href="/termos-de-uso">Termos de Uso</a> · <a href="/politica-privacidade">Privacidade</a> · <span data-site="email">—</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  var API = '/api';
+  var LS_ORDER = 'cftv_pedido';
+  var PIX_TTL = 30 * 60; // seconds
+
+  var params = new URLSearchParams(location.search);
+  var state = {
+    quiz: { perfil: '', sistema: '', objetivo: '' },
+    origem: params.get('origem') || '',
+    artigo: params.get('artigo') || '',
+    catalog: null,
+    bumps: {},
+    order: null
+  };
+  var pollTimer = null, countTimer = null, redirecting = false;
+
+  // ---------- helpers ----------
+  function $(id) { return document.getElementById(id); }
+  function brl(c) { return 'R$ ' + (c / 100).toFixed(2).replace('.', ','); }
+  function utm() { try { return JSON.parse(sessionStorage.getItem('cftv_utm') || '{}'); } catch (e) { return {}; } }
+  function lsGet(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
+
+  var stack = [];
+
+  function show(id, noPush) {
+    var cur = document.querySelector('.panel.active');
+    if (cur && !noPush && cur.id !== id) stack.push(cur.id);
+    document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+    var el = $(id); el.classList.add('active');
+    var step = Number(el.getAttribute('data-step') || 1);
+    document.querySelectorAll('.progress span').forEach(function (s, i) { s.classList.toggle('on', i < step); });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('[data-back]').forEach(function (b) {
+    b.addEventListener('click', function () { var prev = stack.pop(); if (prev) show(prev, true); });
+  });
+
+  // ---------- quiz ----------
+  // If the visitor came from an article, its topic goes first in question 3.
+  (function reorderQ3() {
+    var map = { orcamento: 'orcamento', instalacao: 'instalacao', diagnostico: 'diagnostico', carreira: 'carreira' };
+    var key = map[state.origem];
+    if (!key) return;
+    var wrap = document.querySelector('[data-q="objetivo"]');
+    var btn = wrap.querySelector('[data-v="' + key + '"]');
+    if (btn) wrap.insertBefore(btn, wrap.firstChild);
+  })();
+
+  var next = { perfil: 'p-q2', sistema: 'p-q3', objetivo: 'p-offer' };
+  document.querySelectorAll('.opts').forEach(function (group) {
+    var q = group.getAttribute('data-q');
+    group.addEventListener('click', function (e) {
+      var btn = e.target.closest('.opt'); if (!btn) return;
+      group.querySelectorAll('.opt').forEach(function (o) { o.classList.remove('sel'); });
+      btn.classList.add('sel');
+      state.quiz[q] = btn.getAttribute('data-v');
+      setTimeout(function () {
+        if (next[q] === 'p-offer') buildOffer();
+        show(next[q]);
+      }, 180);
+    });
+  });
+
+  // ---------- offer ----------
+  var EDITION = { analogico: 'Edição Analógico / DVR', ip: 'Edição IP / NVR', 'nao-sei': 'Edição Analógico + IP' };
+  var FOCUS = {
+    orcamento: { tag: 'Foco: orçamento', items: ['Checklist de visita técnica e levantamento', 'Lista de materiais para não esquecer nada no orçamento', 'Como apresentar o serviço e a entrega ao cliente'] },
+    instalacao: { tag: 'Foco: instalação', items: ['Diagramas de ligação: câmera, cabo, fonte e gravador', 'Coaxial x cabo de rede com balun, conectores e emendas', 'Configuração do gravador, HD e acesso pelo celular'] },
+    diagnostico: { tag: 'Foco: diagnóstico', items: ['Roteiro de testes para câmera sem imagem e ruído', 'Fonte, queda de tensão e conectores: o que medir', 'Acesso remoto: P2P, portas e quando o problema é a internet'] },
+    carreira: { tag: 'Foco: começar na área', items: ['Como funciona um sistema completo, do zero', 'Ferramentas e materiais do instalador iniciante', 'Passo a passo do primeiro serviço'] }
+  };
+  var PERFIL = { instalador: 'Para quem já instala', iniciante: 'Para quem está começando', casa: 'Para instalar no seu imóvel' };
+  var BUMP_PRIORITY = {
+    orcamento: ['ORCAMENTO', 'CALCULOS', 'BIBLIOTECA'],
+    instalacao: ['BIBLIOTECA', 'CALCULOS', 'ORCAMENTO'],
+    diagnostico: ['BIBLIOTECA', 'CALCULOS', 'ORCAMENTO'],
+    carreira: ['BIBLIOTECA', 'ORCAMENTO', 'CALCULOS']
+  };
+
+  function loadCatalog() {
+    return fetch(API + '/create-pix', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+      .then(function (data) { state.catalog = data; renderPrices(); })
+      .catch(function () { $('catalog-err').classList.add('show'); });
+  }
+
+  function buildOffer() {
+    var q = state.quiz;
+    var f = FOCUS[q.objetivo] || FOCUS.instalacao;
+    var mainTitle = state.catalog ? state.catalog.main.title : 'Guia Visual do Instalador CFTV';
+    $('reco-title').textContent = mainTitle + ' · ' + (EDITION[q.sistema] || EDITION['nao-sei']);
+    $('reco-tags').innerHTML = '';
+    [PERFIL[q.perfil], f.tag].filter(Boolean).forEach(function (t) {
+      var s = document.createElement('span'); s.className = 'tag'; s.textContent = t; $('reco-tags').appendChild(s);
+    });
+    $('reco-list').innerHTML = '';
+    f.items.concat(['Tudo ilustrado, um assunto por página: use no celular ou imprima']).forEach(function (t) {
+      var li = document.createElement('li'); li.textContent = t; $('reco-list').appendChild(li);
+    });
+    renderBumps();
+    renderPrices();
+  }
+
+  function renderBumps() {
+    var wrap = $('bumps'); wrap.innerHTML = '';
+    if (!state.catalog || !state.catalog.bumps.length) { $('bumps-wrap').hidden = true; return; }
+    var prio = BUMP_PRIORITY[state.quiz.objetivo] || BUMP_PRIORITY.instalacao;
+    var list = state.catalog.bumps.slice().sort(function (a, b) {
+      var ia = prio.indexOf(a.id), ib = prio.indexOf(b.id);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+    list.forEach(function (b) {
+      var lab = document.createElement('label');
+      lab.className = 'bump' + (state.bumps[b.id] ? ' on' : '');
+      lab.innerHTML = '<input type="checkbox"><span class="box"></span><span><span class="bump-t"></span><span class="bump-d"></span></span>';
+      lab.querySelector('.bump-t').innerHTML = '';
+      lab.querySelector('.bump-t').appendChild(document.createTextNode(b.title + ' '));
+      var em = document.createElement('em'); em.textContent = '+ ' + b.price; lab.querySelector('.bump-t').appendChild(em);
+      lab.querySelector('.bump-d').textContent = b.description;
+      var cb = lab.querySelector('input'); cb.checked = !!state.bumps[b.id];
+      cb.addEventListener('change', function () {
+        state.bumps[b.id] = cb.checked; lab.classList.toggle('on', cb.checked); renderPrices();
+      });
+      wrap.appendChild(lab);
+    });
+    $('bumps-wrap').hidden = false;
+  }
+
+  function selectedBumps() {
+    if (!state.catalog) return [];
+    return state.catalog.bumps.filter(function (b) { return state.bumps[b.id]; });
+  }
+
+  function totalCents() {
+    if (!state.catalog) return 0;
+    return selectedBumps().reduce(function (s, b) { return s + b.amount; }, state.catalog.main.amount);
+  }
+
+  function renderPrices() {
+    if (!state.catalog) return;
+    var t = brl(totalCents());
+    $('main-price').textContent = state.catalog.main.price;
+    $('total-offer').textContent = t;
+    $('sum-total').textContent = t;
+    $('btn-total').textContent = t;
+    var n = selectedBumps().length;
+    $('sum-label').textContent = state.catalog.main.title + (n ? ' + ' + n + (n > 1 ? ' extras' : ' extra') : '');
+    $('btn-offer').disabled = false;
+    $('btn-offer').innerHTML = 'Continuar · ' + t + ' <span aria-hidden="true">→</span>';
+  }
+
+  $('btn-offer').addEventListener('click', function () { if (state.catalog) show('p-data'); });
+
+  // ---------- form ----------
+  function maskPhone(v) {
+    v = v.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 10) return '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + '-' + v.slice(7);
+    if (v.length > 6) return '(' + v.slice(0, 2) + ') ' + v.slice(2, 6) + '-' + v.slice(6);
+    if (v.length > 2) return '(' + v.slice(0, 2) + ') ' + v.slice(2);
+    return v.length ? '(' + v : v;
+  }
+  function maskCpf(v) {
+    v = v.replace(/\D/g, '').slice(0, 11);
+    return v.replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+  }
+  function validCpf(c) {
+    c = c.replace(/\D/g, '');
+    if (!/^\d{11}$/.test(c) || /^(\d)\1{10}$/.test(c)) return false;
+    var s = 0, i, d;
+    for (i = 0; i < 9; i++) s += +c[i] * (10 - i);
+    d = (s * 10) % 11; if (d === 10) d = 0; if (d !== +c[9]) return false;
+    s = 0; for (i = 0; i < 10; i++) s += +c[i] * (11 - i);
+    d = (s * 10) % 11; if (d === 10) d = 0; return d === +c[10];
+  }
+  $('phone').addEventListener('input', function (e) { e.target.value = maskPhone(e.target.value); });
+  $('cpf').addEventListener('input', function (e) { e.target.value = maskCpf(e.target.value); });
+  ['name', 'email', 'phone', 'cpf'].forEach(function (k) {
+    $(k).addEventListener('input', function () { $('f-' + k).classList.remove('err'); });
+  });
+
+  function validate() {
+    var ok = true;
+    function mark(k, bad) { $('f-' + k).classList.toggle('err', bad); if (bad) ok = false; }
+    var name = $('name').value.trim().replace(/\s+/g, ' ');
+    mark('name', name.length < 5 || name.indexOf(' ') < 0);
+    mark('email', !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test($('email').value.trim()));
+    var ph = $('phone').value.replace(/\D/g, '');
+    mark('phone', ph.length < 10 || ph.length > 11);
+    mark('cpf', !validCpf($('cpf').value));
+    return ok;
+  }
+
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    $('form-err').classList.remove('show');
+    if (!validate()) { var f = document.querySelector('.field.err input'); if (f) f.focus(); return; }
+    var btn = $('btn-pay'); btn.disabled = true; btn.innerHTML = '<span class="spin" style="border-top-color:#fff;border-color:rgba(255,255,255,.35)"></span> Gerando PIX…';
+    var u = utm();
+    fetch(API + '/create-pix', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        customer: { name: $('name').value.trim(), email: $('email').value.trim(), phone: $('phone').value, cpf: $('cpf').value },
+        bumps: selectedBumps().map(function (b) { return b.id; }),
+        quiz: state.quiz,
+        origem: state.origem,
+        artigo: state.artigo,
+        utm: { source: u.utm_source, medium: u.utm_medium, campaign: u.utm_campaign, term: u.utm_term, content: u.utm_content, gclid: u.gclid }
+      })
+    })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.message || 'Erro ao gerar PIX'); return d; }); })
+      .then(function (d) {
+        var saved = { saleId: d.saleId, token: d.token, accessUrl: d.accessUrl, amount: d.amount, price: d.price, pix: d.pix, createdAt: Date.now() };
+        lsSet(LS_ORDER, saved);
+        startPix(saved);
+      })
+      .catch(function (err) {
+        $('form-err').textContent = err.message || 'Não foi possível gerar o PIX. Tente novamente.';
+        $('form-err').classList.add('show');
+      })
+      .then(function () { btn.disabled = false; btn.innerHTML = 'Gerar PIX · <span id="btn-total">' + brl(totalCents()) + '</span>'; });
+  });
+
+  // ---------- PIX ----------
+  function renderQr(o) {
+    var box = $('qr'); box.innerHTML = ''; box.style.display = '';
+    if (o.pix.qrCodeBase64) {
+      var img = new Image(); img.alt = 'QR Code PIX'; img.src = o.pix.qrCodeBase64; box.appendChild(img); return;
+    }
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+    s.onload = function () { /* global QRCode */ new QRCode(box, { text: o.pix.key, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M }); };
+    // QR library unavailable: hide the empty box, copy-and-paste still works.
+    s.onerror = function () { box.style.display = 'none'; };
+    document.head.appendChild(s);
+  }
+
+  function startPix(o) {
+    state.order = o;
+    $('pix-total').textContent = o.price;
+    $('pix-code').value = o.pix.key;
+    renderQr(o);
+    show('p-pix');
+    var elapsed = Math.floor((Date.now() - o.createdAt) / 1000);
+    startCountdown(Math.max(PIX_TTL - elapsed, 0));
+    startPolling();
+  }
+
+  $('btn-copy').addEventListener('click', function () {
+    var code = $('pix-code').value, btn = this;
+    function done() { btn.textContent = 'Copiado!'; setTimeout(function () { btn.textContent = 'Copiar'; }, 2200); }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(code).then(done, fallback);
+    else fallback();
+    function fallback() { $('pix-code').select(); try { document.execCommand('copy'); done(); } catch (e) {} }
+  });
+
+  function checkNow() {
+    if (!state.order || redirecting) return Promise.resolve();
+    return fetch(API + '/check-status/' + encodeURIComponent(state.order.saleId), { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.status === 'PAGO') handleSuccess();
+        else if (d.status === 'RECUSADO' || d.status === 'ESTORNADO') {
+          clearInterval(pollTimer);
+          $('pix-status').innerHTML = '<span style="color:var(--danger)">Pagamento não aprovado. <a href="#" id="retry">Gerar novo PIX</a></span>';
+          $('retry').onclick = function (e) { e.preventDefault(); lsDel(LS_ORDER); show('p-data'); };
+        }
+      })
+      .catch(function () {});
+  }
+
+  function startPolling() {
+    clearInterval(pollTimer);
+    pollTimer = setInterval(checkNow, 5000);
+  }
+
+  // Returning from the bank app: check immediately instead of waiting the 5s tick.
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') checkNow(); });
+
+  $('btn-paid').addEventListener('click', function () {
+    var b = this; b.disabled = true; b.textContent = 'Verificando…';
+    checkNow().then(function () {
+      setTimeout(function () {
+        if (redirecting) return;
+        b.disabled = false; b.textContent = 'Já paguei';
+        $('pix-status').innerHTML = '<span class="spin"></span>Ainda não recebemos. Pode levar alguns segundos…';
+      }, 800);
+    });
+  });
+
+  function startCountdown(sec) {
+    clearInterval(countTimer);
+    var left = sec;
+    function tick() {
+      var m = Math.floor(left / 60), s = left % 60;
+      $('pix-timer').textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+      if (left <= 0) {
+        clearInterval(countTimer);
+        $('pix-status').innerHTML = '<span style="color:var(--danger)">Código expirado. <a href="#" id="regen">Gerar novo PIX</a></span>';
+        $('regen').onclick = function (e) { e.preventDefault(); clearInterval(pollTimer); lsDel(LS_ORDER); show('p-data'); };
+      }
+      left--;
+    }
+    tick(); countTimer = setInterval(tick, 1000);
+  }
+
+  // ---------- success ----------
+  function fireConversion(o, cb) {
+    var S = window.SITE || {};
+    var flag = 'cftv_conv_' + o.saleId;
+    if (!S.gadsId || !S.gadsLabel || !window.gtag || window.__conversaoEnviada || lsGet(flag)) return cb();
+    window.__conversaoEnviada = true; lsSet(flag, 1);
+    var called = false; function once() { if (!called) { called = true; cb(); } }
+    window.gtag('event', 'conversion', {
+      send_to: S.gadsId + '/' + S.gadsLabel,
+      value: o.amount / 100,
+      currency: 'BRL',
+      transaction_id: o.saleId,
+      event_callback: once
+    });
+    setTimeout(once, 1500);
+  }
+
+  function handleSuccess() {
+    if (redirecting) return;
+    redirecting = true;
+    clearInterval(pollTimer); clearInterval(countTimer);
+    var o = state.order;
+    lsSet('cftv_acesso', { url: o.accessUrl, saleId: o.saleId, at: Date.now() });
+    lsDel(LS_ORDER);
+    $('btn-access').href = o.accessUrl;
+    show('p-ok');
+    fireConversion(o, function () { location.href = o.accessUrl; });
+  }
+
+  // ---------- boot ----------
+  loadCatalog();
+  var pending = lsGet(LS_ORDER);
+  if (pending && pending.saleId && (Date.now() - pending.createdAt) < PIX_TTL * 1000) {
+    startPix(pending);
+    checkNow();
+  } else if (pending) {
+    lsDel(LS_ORDER);
+  }
+})();
+</script>
+</body>
+</html>
