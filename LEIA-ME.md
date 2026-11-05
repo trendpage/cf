@@ -1,51 +1,43 @@
-# Guia CFTV Prático: site blog + checkout (MedusaPay)
+# Guia CFTV Prático: site blog + checkout (Netlify + MedusaPay)
 
 ## Estrutura
 
 ```
-index.html                 fachada (home)
-blog/index.html            lista de artigos
-blog/*.html                8 artigos com CTAs (carreira, orçamento, instalação/diagnóstico)
-checkout.html              3 perguntas → oferta com extras → dados → PIX
-acesso.html                página de entrega (libera os PDFs só com pagamento confirmado)
-assets/config.js           EMPRESA, CNPJ, CONTATO E GOOGLE ADS: único arquivo a editar
-assets/style.css, blog.js  visual e preços dos CTAs
-api/create-pix.js          GET catálogo e preços / POST gera o PIX
-api/check-status/[id].js   polling do pagamento
-api/recovery.js            SMS de recuperação (QStash → Integrax)
-api/access.js              valida o link de acesso e o pagamento
-api/webhook.js             postback da MedusaPay (opcional)
-api/_lib/catalog.js        PRODUTOS, PREÇOS E ARQUIVOS DE ENTREGA
-api/_lib/medusa.js         integração MedusaPay
-materiais/                 PDFs de entrega (ver LEIA-ME.txt dentro da pasta)
-termos-de-uso / politica-privacidade         páginas legais do blog e checkout
-termos-uso / privacidade-termo               páginas legais da fachada
+index.html                     fachada (home)
+blog/index.html                blog no formato Edoc (mais buscados + guias rápidos)
+blog/*.html                    8 artigos com CTAs
+checkout.html                  3 perguntas → oferta com extras → dados → PIX
+acesso.html                    entrega: libera os PDFs só com pagamento confirmado
+assets/config.js               e-mail, WhatsApp, razão social/CNPJ (só nas páginas legais) e Google Ads
+lib/catalog.js                 PRODUTO, EXTRAS, PREÇOS E ARQUIVOS DE ENTREGA
+lib/medusa.js                  integração MedusaPay
+netlify/functions/*.mjs        APIs: create-pix, check-status, recovery, access, webhook
+netlify.toml                   configuração da Netlify
+materiais/                     PDFs de entrega (já comprimidos, todos abaixo de 25 MB)
 ```
 
-## Variáveis de ambiente na Vercel
+## Variáveis de ambiente na Netlify (Site configuration → Environment variables)
 
 | Variável | Obrigatória | Valor |
 |---|---|---|
 | MEDUSAPAY_API_KEY | sim | chave `mk_live_...` |
 | MEDUSAPAY_BASE_URL | não | `https://api.medusapayoficial.pro/api/v1` |
-| ACCESS_SECRET | sim | qualquer texto longo e aleatório (protege o link de acesso) |
-| SITE_URL | sim | endereço do site, sem barra no final |
-| QSTASH_TOKEN, QSTASH_URL | para SMS | mesmas do Upstash que você já usa |
+| ACCESS_SECRET | sim | texto longo e aleatório (protege o link de acesso) |
+| SITE_URL | não | se vazio, usa o endereço do próprio site na Netlify |
+| QSTASH_TOKEN, QSTASH_URL | para SMS | mesmas do Upstash |
 | RECOVERY_SECRET | recomendado | texto aleatório |
 | RECOVERY_DELAY | não | padrão `90s` |
-| INTEGRAX_AUTOMATION_URL | para SMS | mesma Shared Variable |
-| DELIVERY_SMS | não | `on` envia evento `pix_paid` com o link de acesso para quem pagou |
+| INTEGRAX_AUTOMATION_URL | para SMS | URL da automação |
+| DELIVERY_SMS | não | `on` envia `pix_paid` com o link de acesso para quem pagou |
 
-Depois de mudar variáveis: Redeploy.
+Depois de salvar as variáveis: Deploys → Trigger deploy → Deploy site.
 
 ## Antes de subir campanha
 
-1. Comparar `api/_lib/medusa.js` (endpoint, campos do corpo e da resposta) com o create-pix do site que já roda na MedusaPay.
-2. Preencher `assets/config.js` (razão social, CNPJ, e-mail, ID e label de conversão do Google Ads).
-3. Trocar `https://SEU-PROJETO.vercel.app` em `sitemap.xml`, `robots.txt` e nas tags canonical pelo endereço real.
-4. Subir os PDFs em `materiais/` com os nomes do LEIA-ME da pasta, e conferir se os textos dos extras em `api/_lib/catalog.js` batem com o que os PDFs entregam.
-5. Fazer uma compra real de teste e conferir: PIX gera, a página redireciona para o acesso, os arquivos abrem.
+1. Conferir `lib/medusa.js` (endpoint, campos enviados e resposta) com o create-pix do site oficial.
+2. Preencher `assets/config.js`.
+3. Fazer uma compra real de teste: PIX gera, redireciona para o acesso, os PDFs abrem.
 
 ## Leitura dos resultados
 
-Cada PIX gerado grava nos logs da Vercel uma linha `[venda]` com valor, itens, respostas do quiz, artigo de origem e campanha.
+Cada PIX gerado grava uma linha `[venda]` nos logs da função create-pix (Netlify → Logs → Functions) com valor, itens, respostas do quiz, artigo e campanha.

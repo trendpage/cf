@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Seu Guia Visual de CFTV | Guia CFTV Prático</title>
-<meta name="description" content="Monte seu Guia Visual do Instalador CFTV em 3 perguntas e receba o material digital após a confirmação do PIX.">
+<title>+150 Guias Visuais de CFTV | Guia CFTV Prático</title>
+<meta name="description" content="+150 Guias Visuais de CFTV, Alarmes e Segurança Eletrônica. Material digital liberado após a confirmação do PIX.">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0b3b5c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='7' fill='%23ea580c'/%3E%3Cpath d='M6 10.5h9.5l4.5-2.5v9l-4.5-2.5H6z' fill='%23fff'/%3E%3C/svg%3E">
@@ -54,6 +54,10 @@ h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
 .reco-title{font-size:17px;font-weight:800;line-height:1.3}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
 .tag{font-size:12px;font-weight:600;background:#eef3f8;color:var(--brand);border-radius:99px;padding:3px 9px}
+.inc{display:grid;gap:4px;background:#f6f8fb;border-radius:10px;padding:10px 12px;margin:4px 0 8px}
+.inc:before{content:"Você recebe";font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.inc span{font-size:13.5px;font-weight:600;color:var(--brand)}
+.inc span:before{content:"▸ ";color:var(--accent)}
 .reco ul{list-style:none;display:grid;gap:7px;margin:10px 0}
 .reco li{display:flex;gap:8px;font-size:14px}
 .reco li:before{content:"";flex:none;width:16px;height:16px;margin-top:2px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
@@ -182,9 +186,10 @@ h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
       <div class="reco">
         <div class="reco-head">Recomendado para você</div>
         <div class="reco-body">
-          <div class="reco-title" id="reco-title">Guia Visual do Instalador CFTV</div>
+          <div class="reco-title" id="reco-title">+150 Guias Visuais de CFTV, Alarmes e Segurança Eletrônica</div>
           <div class="tags" id="reco-tags"></div>
           <ul id="reco-list"></ul>
+          <div class="inc" id="reco-inc" hidden></div>
           <div class="price-row"><span>Material digital (PDF) · acesso após o PIX</span><strong id="main-price">—</strong></div>
         </div>
       </div>
@@ -206,7 +211,7 @@ h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
       <div class="step-label">Dados para o PIX</div>
       <h2>Para onde enviamos seu acesso?</h2>
       <p class="sub">Leva 30 segundos. Seus dados são usados só para gerar o pagamento e liberar o material.</p>
-      <div class="summary"><span id="sum-label">Guia Visual do Instalador CFTV</span><strong id="sum-total">—</strong></div>
+      <div class="summary"><span id="sum-label">+150 Guias Visuais de CFTV</span><strong id="sum-total">—</strong></div>
       <form id="form" novalidate autocomplete="on">
         <div class="field" id="f-name"><label for="name">Nome completo</label><input id="name" name="name" autocomplete="name" placeholder="Seu nome e sobrenome"><div class="hint">Digite nome e sobrenome</div></div>
         <div class="field" id="f-email"><label for="email">E-mail</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com"><div class="hint">Confira se o e-mail está correto</div></div>
@@ -253,8 +258,10 @@ h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
   </div>
 
   <footer class="foot">
-    <span data-site="companyName">—</span> · CNPJ <span data-site="cnpj">—</span><br>
-    <a href="/termos-de-uso">Termos de Uso</a> · <a href="/politica-privacidade">Privacidade</a> · <span data-site="email">—</span>
+    <strong>+150 Guias Visuais de CFTV, Alarmes e Segurança Eletrônica</strong><br>
+    Material digital de apoio ao estudo, instalação, revisão e consulta em CFTV e alarmes.<br>
+    © 2026. Todos os direitos reservados.<br>
+    <a href="/termos-de-uso">Termos de Uso</a> · <a href="/politica-privacidade">Política de Privacidade</a>
   </footer>
 </main>
 
@@ -328,41 +335,47 @@ h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
   });
 
   // ---------- offer ----------
-  var EDITION = { analogico: 'Edição Analógico / DVR', ip: 'Edição IP / NVR', 'nao-sei': 'Edição Analógico + IP' };
+  var SYSTEM_TAG = { analogico: 'Analógico / DVR', ip: 'IP / NVR', 'nao-sei': 'Analógico + IP' };
   var FOCUS = {
-    orcamento: { tag: 'Foco: orçamento', items: ['Checklist de visita técnica e levantamento', 'Lista de materiais para não esquecer nada no orçamento', 'Como apresentar o serviço e a entrega ao cliente'] },
-    instalacao: { tag: 'Foco: instalação', items: ['Diagramas de ligação: câmera, cabo, fonte e gravador', 'Coaxial x cabo de rede com balun, conectores e emendas', 'Configuração do gravador, HD e acesso pelo celular'] },
-    diagnostico: { tag: 'Foco: diagnóstico', items: ['Roteiro de testes para câmera sem imagem e ruído', 'Fonte, queda de tensão e conectores: o que medir', 'Acesso remoto: P2P, portas e quando o problema é a internet'] },
-    carreira: { tag: 'Foco: começar na área', items: ['Como funciona um sistema completo, do zero', 'Ferramentas e materiais do instalador iniciante', 'Passo a passo do primeiro serviço'] }
+    orcamento: { tag: 'Foco: orçamento', items: ['Kit Profissional: fichas, checklists e modelos da visita à entrega', 'Calculadora Visual: HD, bitrate, PoE, fontes e nobreak', '10 projetos visuais prontos para apresentar ao cliente'] },
+    instalacao: { tag: 'Foco: instalação', items: ['Câmeras, cabos, conectores, PoE, DVR/NVR e gravação', '10 projetos visuais prontos para planejar cada imóvel', 'Checklists de instalação, testes e entrega'] },
+    diagnostico: { tag: 'Foco: diagnóstico', items: ['Guias de diagnóstico, gravação, rede e acesso remoto', 'Calculadora Visual para conferir HD, fonte e PoE', 'Checklists de teste antes de entregar o serviço'] },
+    carreira: { tag: 'Foco: começar na área', items: ['Do básico ao avançado: como funciona cada parte do sistema', '10 projetos visuais prontos de residência e comércio', 'Kit Profissional para atender como instalador'] }
   };
   var PERFIL = { instalador: 'Para quem já instala', iniciante: 'Para quem está começando', casa: 'Para instalar no seu imóvel' };
   var BUMP_PRIORITY = {
-    orcamento: ['ORCAMENTO', 'CALCULOS', 'BIBLIOTECA'],
-    instalacao: ['BIBLIOTECA', 'CALCULOS', 'ORCAMENTO'],
-    diagnostico: ['BIBLIOTECA', 'CALCULOS', 'ORCAMENTO'],
-    carreira: ['BIBLIOTECA', 'ORCAMENTO', 'CALCULOS']
+    orcamento: ['DIAGNOSTICO', 'INTERFONIA', 'CONTROLE_ACESSO'],
+    instalacao: ['DIAGNOSTICO', 'INTERFONIA', 'CONTROLE_ACESSO'],
+    diagnostico: ['DIAGNOSTICO', 'CONTROLE_ACESSO', 'INTERFONIA'],
+    carreira: ['DIAGNOSTICO', 'INTERFONIA', 'CONTROLE_ACESSO']
   };
 
   function loadCatalog() {
     return fetch(API + '/create-pix', { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
-      .then(function (data) { state.catalog = data; renderPrices(); })
+      .then(function (data) { state.catalog = data; if (state.quiz.objetivo) buildOffer(); else renderPrices(); })
       .catch(function () { $('catalog-err').classList.add('show'); });
   }
 
   function buildOffer() {
     var q = state.quiz;
     var f = FOCUS[q.objetivo] || FOCUS.instalacao;
-    var mainTitle = state.catalog ? state.catalog.main.title : 'Guia Visual do Instalador CFTV';
-    $('reco-title').textContent = mainTitle + ' · ' + (EDITION[q.sistema] || EDITION['nao-sei']);
+    $('reco-title').textContent = state.catalog ? state.catalog.main.title : '+150 Guias Visuais de CFTV, Alarmes e Segurança Eletrônica';
     $('reco-tags').innerHTML = '';
-    [PERFIL[q.perfil], f.tag].filter(Boolean).forEach(function (t) {
+    [PERFIL[q.perfil], SYSTEM_TAG[q.sistema], f.tag].filter(Boolean).forEach(function (t) {
       var s = document.createElement('span'); s.className = 'tag'; s.textContent = t; $('reco-tags').appendChild(s);
     });
     $('reco-list').innerHTML = '';
-    f.items.concat(['Tudo ilustrado, um assunto por página: use no celular ou imprima']).forEach(function (t) {
+    f.items.forEach(function (t) {
       var li = document.createElement('li'); li.textContent = t; $('reco-list').appendChild(li);
     });
+    var inc = $('reco-inc'); inc.innerHTML = '';
+    if (state.catalog && state.catalog.main.includes) {
+      state.catalog.main.includes.forEach(function (t) {
+        var s = document.createElement('span'); s.textContent = t; inc.appendChild(s);
+      });
+      inc.hidden = false;
+    }
     renderBumps();
     renderPrices();
   }
@@ -410,7 +423,7 @@ h1,h2{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px}
     $('sum-total').textContent = t;
     $('btn-total').textContent = t;
     var n = selectedBumps().length;
-    $('sum-label').textContent = state.catalog.main.title + (n ? ' + ' + n + (n > 1 ? ' extras' : ' extra') : '');
+    $('sum-label').textContent = '+150 Guias Visuais de CFTV' + (n ? ' + ' + n + (n > 1 ? ' extras' : ' extra') : '');
     $('btn-offer').disabled = false;
     $('btn-offer').innerHTML = 'Continuar · ' + t + ' <span aria-hidden="true">→</span>';
   }
