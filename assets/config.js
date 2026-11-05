@@ -5,7 +5,8 @@
 window.SITE = {
   brand: 'Guia CFTV Prático',
 
-  // Company that receives the PIX (shown in the footer and legal pages).
+  // Company that receives the PIX. Shown ONLY in Termos de Uso and Política de Privacidade
+  // (Decreto 7.962/2013 requires name and CNPJ to be visible on the site).
   // The PIX name in the buyer's bank app comes from this CNPJ's bank account.
   companyName: 'RAZÃO SOCIAL LTDA',
   cnpj: '00.000.000/0001-00',
