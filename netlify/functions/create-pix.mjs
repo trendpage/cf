@@ -4,7 +4,7 @@
 // POST body: { customer:{name,email,phone,cpf}, bumps:[ids], quiz:{perfil,sistema,objetivo}, origem, artigo, utm:{...} }
 
 import { MAIN, publicCatalog, resolveOrder, formatBRL } from '../../lib/catalog.js';
-import { createPix, isConfigured } from '../../lib/medusa.js';
+import { createPix, isConfigured, diagnostics } from '../../lib/medusa.js';
 import { makeToken } from '../../lib/token.js';
 import { json, readJson, siteUrl } from '../../lib/http.js';
 
@@ -27,7 +27,28 @@ function validCpf(cpf) {
 const clean = (v, max = 60) => String(v || '').replace(/[^\w\-áéíóúâêôãõç ]/gi, '').slice(0, max);
 
 export default async (req) => {
-  if (req.method === 'GET') return json(200, publicCatalog());
+  try {
+    return await handle(req);
+  } catch (err) {
+    // Any unexpected crash still answers JSON, with the reason in the function log.
+    console.error('[create-pix] erro inesperado:', err && err.stack ? err.stack : err);
+    return json(500, { message: 'Erro interno ao gerar o PIX. Tente novamente.', codigo: 'ERRO_INTERNO' });
+  }
+};
+
+async function handle(req) {
+  if (req.method === 'GET') {
+    // /api/create-pix?diag=1 -> shows whether the env vars reached the function (no secrets exposed)
+    if (new URL(req.url).searchParams.get('diag') === '1') {
+      return json(200, {
+        ...diagnostics(),
+        access_secret_encontrado: Boolean(process.env.ACCESS_SECRET),
+        qstash_encontrado: Boolean(process.env.QSTASH_TOKEN),
+        integrax_encontrado: Boolean(process.env.INTEGRAX_AUTOMATION_URL),
+      });
+    }
+    return json(200, publicCatalog());
+  }
   if (req.method !== 'POST') return json(405, { message: 'Método não permitido' });
 
   const { customer = {}, bumps = [], quiz = {}, origem = '', artigo = '', utm = {} } = await readJson(req);
@@ -45,8 +66,8 @@ export default async (req) => {
   if (errs.length) return json(422, { message: 'Confira: ' + errs.join(', ') });
 
   if (!isConfigured()) {
-    console.error('[create-pix] MEDUSAPAY_API_KEY não configurada');
-    return json(500, { message: 'Pagamento indisponível no momento. Tente em instantes.' });
+    console.error('[create-pix] MEDUSAPAY_API_KEY não configurada (ou sem escopo Functions / sem novo deploy)');
+    return json(500, { message: 'Pagamento indisponível no momento. Tente em instantes.', codigo: 'SEM_CHAVE_MEDUSAPAY' });
   }
 
   const order = resolveOrder(bumps);
@@ -99,9 +120,9 @@ export default async (req) => {
     });
   } catch (err) {
     console.error('[create-pix] erro MedusaPay:', err.status || '', err.message, JSON.stringify(err.payload || {}).slice(0, 400));
-    return json(400, { message: 'Não foi possível gerar o PIX. Tente novamente.' });
+    return json(400, { message: 'Não foi possível gerar o PIX. Tente novamente.', codigo: 'MEDUSAPAY_RECUSOU', http_gateway: err.status || null });
   }
-};
+}
 
 // SMS recovery via QStash -> /api/recovery (~90s after PIX generation).
 // Dedup by phone: several PIX generations by the same person collapse into one job.
