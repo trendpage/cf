@@ -1,0 +1,9 @@
+Coloque nesta pasta os PDFs de entrega, com exatamente estes nomes:
+
+guia-visual-instalador-cftv.pdf          -> produto principal
+biblioteca-guias-visuais-cftv.pdf        -> extra "Biblioteca +150 Guias Visuais"
+kit-orcamento-precificacao-cftv.pdf      -> extra "Kit Orçamento e Precificação"
+tabelas-calculo-instalador-cftv.pdf      -> extra "Tabelas de Cálculo do Instalador"
+
+Os nomes, preços e textos de cada item ficam em api/_lib/catalog.js.
+Se algum extra não existir, mude "enabled: true" para "enabled: false" nele.
